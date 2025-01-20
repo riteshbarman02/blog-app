@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $color-secondary;
+  opacity: 0.3;
+  color: white;
+  .navbar__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  .navbar__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    .navbar__link {
+      text-decoration: none;
+      color: white;
+      margin-left: 1rem;
+    }
+  }
+}
