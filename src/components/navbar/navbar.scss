@@ -1,4 +1,6 @@
 @import "../../styles/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -16,98 +18,116 @@
     max-width: 1280px;
     width: 100%;
     display: flex;
-    align-items: end;
+    justify-content: space-between;
 
-    .logo {
+    .left-navigator
+    {
       display: flex;
-      gap: 2px; 
-      border: 1px solid transparent;
-      border-radius: 8px;
-      position: relative;
-     
-
-      &::after {
-        content: '';
-        width: 0; /* Start with no underline */
-        position: absolute;
-        bottom: -4px; /* Position the underline just below the logo */
-        left: 0;
-        height: 2px; /* Thickness of the underline */
-        background-color: $color-tertiary; /* Underline color */
-        transition: width 0.3s ease; /* Smooth animation for underline */
-      }
-    
-      &:hover::after {
-        width: 100%; /* Expand the underline to full width of .logo */
-      }
-
-      .letter {
-        font-family: "Arial", sans-serif;
-        font-size: 50px;
-        font-weight: bold;
+      align-items: end;
+      .logo {
+        display: flex;
+        gap: 2px; 
+        border: 1px solid transparent;
+        border-radius: 8px;
         position: relative;
-      }
-
-      .letter.r {
-     
-        -webkit-text-stroke: 2px $color-tertiary; /* Add an outline matching the fill color */
-        -webkit-text-fill-color: $color-tertiary; /* Blue fill for the letter */
-    
-      }
-
-      .letter.b {
-        color: transparent;
-        -webkit-text-stroke: 2px $color-tertiary; /* White outline for the letter */
-        -webkit-text-fill-color: transparent; /* Transparent fill */
-    
-      }
-
-      &:hover{
-        //add a underline effect to the logo
-        
- 
-        .letter.r{
-            color: transparent;
-            -webkit-text-stroke: 2px $color-tertiary; /* White outline for the letter */
-            -webkit-text-fill-color: transparent; /* Transparent fill */  
+       
+       
+  
+        &::after {
+          content: '';
+          width: 0; /* Start with no underline */
+          position: absolute;
+          bottom: -4px; /* Position the underline just below the logo */
+          left: 0;
+          height: 2px; /* Thickness of the underline */
+          background-color: $color-tertiary; /* Underline color */
+          transition: width 0.3s ease; /* Smooth animation for underline */
         }
-        .letter.b{
-            color: blue;
-            -webkit-text-stroke: 2px $color-tertiary; /* Add an outline matching the fill color */
-            -webkit-text-fill-color: $color-tertiary; /* Blue fill for the letter */
+      
+        &:hover::after {
+          width: 100%; /* Expand the underline to full width of .logo */
         }
+  
+        .letter {
+          font-family: "Dancing Script", serif;
+          font-size: 40px;
+          font-weight: bold;
+          position: relative;
+        }
+  
+        .letter.r {
+       
+          -webkit-text-stroke: 2px $color-tertiary; /* Add an outline matching the fill color */
+          -webkit-text-fill-color: $color-tertiary; /* Blue fill for the letter */
+      
+        }
+  
+        .letter.b {
+          color: transparent;
+          -webkit-text-stroke: 2px $color-tertiary; /* White outline for the letter */
+          -webkit-text-fill-color: transparent; /* Transparent fill */
+      
+        }
+  
+        &:hover{
+          //add a underline effect to the logo
+          
+   
+          .letter.r{
+              color: transparent;
+              -webkit-text-stroke: 2px $color-tertiary; /* White outline for the letter */
+              -webkit-text-fill-color: transparent; /* Transparent fill */  
+          }
+          .letter.b{
+              color: blue;
+              -webkit-text-stroke: 2px $color-tertiary; /* Add an outline matching the fill color */
+              -webkit-text-fill-color: $color-tertiary; /* Blue fill for the letter */
+          }
+        }
+      }
+      .menu{
+         
+          ul{
+              margin: 10px 0;
+              list-style: none;
+              display: flex;
+              align-items: end;
+              gap: 20px;
+  
+              li{
+                  position: relative;
+                  color: $color-quaternary;
+                  &:hover{
+                      color: $color-secondary;
+                      cursor: pointer;
+                  }
+                  &::after {
+                      content: '';
+                      width: 0; /* Start with no underline */
+                      position: absolute;
+                      bottom: -4px; /* Position the underline just below the logo */
+                      left: 0;
+                      height: 2px; /* Thickness of the underline */
+                      background-color: $color-secondary; /* Underline color */
+                      transition: width 0.3s ease; /* Smooth animation for underline */
+                    }
+                  
+                    &:hover::after {
+                      width: 100%; /* 
+                      Expand the underline to full width of .logo */
+                      cursor: pointer;
+                    }
+              }
+          }
       }
     }
-    .menu{
-       
-        ul{
-            margin: 10px 0;
-            list-style: none;
-            display: flex;
-            align-items: end;
-            gap: 20px;
-
-            li{
-                position: relative;
-                color: $color-quaternary;
-                &::after {
-                    content: '';
-                    width: 0; /* Start with no underline */
-                    position: absolute;
-                    bottom: -4px; /* Position the underline just below the logo */
-                    left: 0;
-                    height: 2px; /* Thickness of the underline */
-                    background-color: $color-quaternary; /* Underline color */
-                    transition: width 0.3s ease; /* Smooth animation for underline */
-                  }
-                
-                  &:hover::after {
-                    width: 100%; /* 
-                    Expand the underline to full width of .logo */
-                    cursor: pointer;
-                  }
-            }
-        }
+    .right-navigator{
+      display: flex;
+      align-items: center;
+      .searchbar{
+        display: flex;
+        gap: 5px;
+      }
     }
   }
 }
