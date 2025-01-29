@@ -84,7 +84,7 @@ const ThreeScene = () => {
     return () => {
       window.removeEventListener('resize', onWindowResize);
       cancelAnimationFrame(animationRef.current); // Cancel animation frame
-      renderer.dispose();
+    
     };
   }, []);
 
