@@ -13,7 +13,7 @@
   font-size: 1.2rem;
   -webkit-backdrop-filter: blur(60px);
   position: fixed;
-
+  z-index: 10;
   box-shadow: 0 0 80px var(--color-tertiary-transparent);
   /* decrease the box shadow opacity
    */

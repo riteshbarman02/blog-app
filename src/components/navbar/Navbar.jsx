@@ -6,14 +6,15 @@ import { RxCross1 } from "react-icons/rx";
 
 
 const themes = [
+  
   "light",
-  "dark",
+  "dark",  
   "ocean",
   "sunset",
 ];
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("default");
+  const [theme, setTheme] = useState("dark"); // State for theme selection
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for toggling the menu
 
   const handleThemeChange = (event) => {
