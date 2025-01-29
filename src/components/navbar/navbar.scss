@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .navbar {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +12,7 @@
   color: var(--color-quaternary);
   font-size: 1.2rem;
   -webkit-backdrop-filter: blur(60px);
+  position: fixed;
 
   box-shadow: 0 0 80px var(--color-tertiary-transparent);
   /* decrease the box shadow opacity
