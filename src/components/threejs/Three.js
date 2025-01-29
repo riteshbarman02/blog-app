@@ -22,7 +22,7 @@ const ThreeScene = () => {
 
     // Camera
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
-    camera.position.set(0, 0, 5000);
+    camera.position.set(0, 0, 10);
     scene.add(camera);
 
     // Ambient Light
@@ -46,7 +46,7 @@ const ThreeScene = () => {
 
     // Load GLTF Model
     const loader = new GLTFLoader();
-    loader.load('/assets/modern_gaming_setup/scene.gltf', (gltf) => {
+    loader.load('/assets/gaming_desktop/scene.gltf', (gltf) => {
       model = gltf.scene;
       scene.add(model);
 
