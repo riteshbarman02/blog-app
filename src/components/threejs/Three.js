@@ -39,6 +39,14 @@ const ThreeScene = () => {
       spheres.push(sphere);
       scene.add(sphere);
     }
+    //add a plane
+    const planeGeometry = new THREE.PlaneGeometry(7.5, 15);  
+    const planeMaterial = new THREE.MeshBasicMaterial({ color: 0Xff00ff, side: THREE.DoubleSide });
+    const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane.position.set(-0.6, -2, 0.6);
+    plane.rotation.x = Math.PI / 2;
+    scene.add(plane);
+
 
     // Lights
     const ambientLight = new THREE.AmbientLight(0xffff00, 1);
@@ -83,31 +91,57 @@ const ThreeScene = () => {
     const animate = () => {
       controls.update();
       const deltaTime = clock.getDelta();
-
+    
       spheres.forEach((sphere) => {
         sphere.position.addScaledVector(sphere.userData.velocity, deltaTime * 60);
-        
+    
+        const planeMinX = -2.75;  // Plane's left boundary
+        const planeMaxX = 2.75;   // Plane's right boundary
+        const planeMinZ = -4.5;   // Plane's top boundary
+        const planeMaxZ = 4.5;    // Plane's bottom boundary
+        const planeY = -1;        // Plane's height
+    
+        // Check if sphere is within the plane's x and z boundaries
+        const isInsidePlane =
+          sphere.position.x >= planeMinX && sphere.position.x <= planeMaxX &&
+          sphere.position.z >= planeMinZ && sphere.position.z <= planeMaxZ;
+    
+        if (sphere.position.y <= planeY + 0.1 && isInsidePlane) {
+          // Apply deceleration when inside the plane's bounds
+          sphere.userData.velocity.y = 0;
+    
+          if (Math.abs(sphere.userData.velocity.y) < 0.001) {
+            sphere.userData.velocity.y = 0;  // Stop completely when slow enough
+          }
+    
+          // Keep the sphere on the plane level
+          sphere.position.y = Math.max(sphere.position.y, planeY + 0.05);
+        }
+    
         if (model) {
           const modelBox = new THREE.Box3().setFromObject(model);
           const sphereBox = new THREE.Box3().setFromObject(sphere);
-          
+    
           if (modelBox.intersectsBox(sphereBox) && !sphere.userData.bounce) {
             sphere.userData.velocity.x = (Math.random() - 0.5) * 0.2;
             sphere.userData.velocity.z = (Math.random() - 0.5) * 0.2;
             sphere.userData.bounce = true;
           }
         }
-        
+    
+        // Reset sphere if it falls below y = -5 (outside the plane area)
         if (sphere.position.y < -5) {
           sphere.position.set(Math.random() * 10 - 5, Math.random() * 10 + 5, Math.random() * 10 - 5);
           sphere.userData.velocity.set(0, -0.02 - Math.random() * 0.05, 0);
           sphere.userData.bounce = false;
         }
       });
-
+    
       renderer.render(scene, camera);
       animationRef.current = requestAnimationFrame(animate);
     };
+    
+    
     animate();
 
     resizeRenderer();
