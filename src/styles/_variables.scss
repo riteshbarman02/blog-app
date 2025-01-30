@@ -1,42 +1,42 @@
 // src/styles/variables.scss
 :root {
   --color-primary: #141414;
-  --color-secondary: #393E46;
+  --color-secondary: #393e46;
   --color-tertiary: #f6f7e3;
   --color-quaternary: #697471;
   --color-tertiary-transparent: #81818162;
-  }
-  
-  [data-theme="light"] {
-    --color-primary: #ffffff;
-    --color-secondary: #393E46;
-    --color-tertiary: #222831;
-    --color-quaternary: #222831;
-    --color-tertiary-transparent:#454c555e;
-  }
-  
-  [data-theme="dark"] {
-    --color-primary: #222831;
-    --color-secondary: #393E46;
-    --color-tertiary: #f6f7e3;
-    --color-quaternary: #697471;
-    --color-tertiary-transparent: #81818162;
-  
-  }
-  
-  [data-theme="ocean"] {
-    --color-primary: #493628;
-    --color-secondary: #A7B49E;
-    --color-tertiary: #E4E0E1;
-    --color-quaternary: #A7B49E;
+}
 
-  }
-  
-  [data-theme="sunset"] {
-    --color-primary: #ff9e80;
-    --color-secondary: #ff7043;
-    --color-tertiary: #d84315;
-    --color-quaternary: #bf360c;
+[data-theme="light"] {
+  --color-primary: #ffffff;
+  --color-secondary: #393e46;
+  --color-tertiary: #222831;
+  --color-quaternary: #222831;
+  --color-tertiary-transparent: #454c555e;
+}
 
-  }
-  
+[data-theme="dark"] {
+  --color-primary: #222831;
+  --color-secondary: #393e46;
+  --color-tertiary: #f6f7e3;
+  --color-quaternary: #697471;
+  --color-tertiary-transparent: #81818162;
+}
+
+[data-theme="ocean"] {
+  --color-primary:  linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(0,0, 0, 1) 100%
+  );
+  --color-secondary: #a7b49e;
+  --color-tertiary: #e4e0e1;
+  --color-quaternary: #a7b49e;
+}
+
+[data-theme="sunset"] {
+  --color-primary: #ff9e80;
+  --color-secondary: #ff7043;
+  --color-tertiary: #d84315;
+  --color-quaternary: #bf360c;
+}

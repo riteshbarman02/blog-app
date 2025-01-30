@@ -4,9 +4,11 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: var(--color-primary);
+  background: var(--color-primary);
   font-family: "Inter", sans-serif;
   transition: all 0.5s ease;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main{

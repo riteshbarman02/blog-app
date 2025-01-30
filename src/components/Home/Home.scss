@@ -1,15 +1,56 @@
+
 .home{
     width: 100%;
     display: flex;
+    padding:20px;
+    box-sizing:border-box;
     justify-content: center;
-    position: relative;
+    height: 100vh;
+    
+    
+    
+    .primary-container{
+         max-width: 1280px;
+         display: flex;
+         flex: 1 1;
 
-    .blur{
-        position: absolute;
-        width: 50%;
-        height: 00%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 0;
-        backdrop-filter: blur(10px);
+        .threejs-container{
+            
+            flex: 1 1;
+            position:relative;
+            background: var(--color-primary);
+            border-radius:8px;
+             
+    
+            
+      
+        }
+    
+        .threejs-container::after{
+            content:'';
+            position:absolute;
+            height:100%;
+            width:100%;
+            background:conic-gradient(#1f0764,#ff05d5,#1f0764);
+            
+            top:50%;       
+            left:50%;
+            translate:-50% -50%;
+            z-index :-1;
+            padding:5px;
+            border-radius:8px;
+            filter: blur(5px) opacity(0.5);
+           
+    
+        }
+
+        .about-section
+        {
+
+        }
+    
+
     }
-}
+
+ 
+   }
